@@ -24,6 +24,25 @@
   <main class="container">
     <div data-view="entry-form">
       <h2 class="row column-full">New Entry</h2>
+      <div class="row">
+        <img class="column-half" src="images/placeholder-image-square.jpg"/>
+        <div class="column-half">
+          <h4>Title</h4>
+          <input type="text" id="title" name="title"/>
+          <h4>Photo URL</h4>
+          <input type="url" id="url" name="photo url"/>
+        </div>
+      </div>
+      <div class="row column-full">
+        <h4>Notes</h4>
+      </div>
+      <div class="row column-full">
+        <input type="text" id="notes" name="notes"/>
+      </div>
+      <br />
+      <div class="row column-full">
+        <input type="submit" value="Save"/>
+      </div>
     </div>
     <div data-view="entries" class="hidden"></div>
   </main>
