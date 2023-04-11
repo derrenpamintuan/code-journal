@@ -11,5 +11,11 @@ window.addEventListener('beforeunload', beforeUnload);
 
 function beforeUnload(event) {
   const entriesJSON = JSON.stringify(data.entries);
-  localStorage.setItem('javascript-local-storage', entriesJSON);
+  localStorage.setItem('local-storage', entriesJSON);
+}
+
+const previousEntries = localStorage.getItem('local-storage');
+
+if (previousEntries !== null) {
+  data.entries = JSON.parse(previousEntries);
 }
