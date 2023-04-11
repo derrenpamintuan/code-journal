@@ -1,0 +1,99 @@
+* {
+  font-family: "Proza Libre", sans-serif;
+}
+
+body {
+  background-color: rgb(247, 247, 247);
+}
+
+header {
+  background: #562b81;
+  height: 53px;
+}
+
+.column-full > p {
+  color: white;
+}
+
+img {
+  object-fit: contain;
+  width: 100%;
+  border-radius: 5px;
+}
+
+h2 {
+  margin: 13px 0;
+}
+
+h4 {
+  margin: 12px 0 5px;
+}
+
+input.title {
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  border-radius: 3px;
+  border-color: rgb(217, 217, 217);
+  border-style: solid;
+}
+
+input.title:focus {
+  outline: none;
+  border: solid 2px #562b81;
+}
+
+input.url {
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  border-radius: 3px;
+  border-color: rgb(217, 217, 217);
+  border-style: solid;
+}
+
+input.url:focus {
+  outline: none;
+  border: solid 2px #562b81;
+}
+
+textarea {
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  border-radius: 3px;
+  border-color: rgb(217, 217, 217);
+  border-style: solid;
+  border-width: 2px;
+}
+
+textarea:focus {
+  outline: none;
+  border: solid 2px #562b81;
+}
+
+input.save {
+  float: right;
+  color: white;
+  background-color: #562b81;
+  padding: 7px 17px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .column-half > h4 {
+    margin-top: 0;
+  }
+}
