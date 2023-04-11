@@ -2,6 +2,10 @@
   font-family: "Proza Libre", sans-serif;
 }
 
+body {
+  background-color: rgb(245, 245, 245);
+}
+
 header {
   background: #562b81;
   margin: 0;
@@ -33,6 +37,14 @@ input.title {
   padding: 5px;
   margin-bottom: 10px;
   font-size: 15px;
+  border-radius: 3px;
+  border-color: rgb(217, 217, 217);
+  border-style: solid;
+}
+
+input.title:focus {
+  outline: none;
+  border: solid 2px #562b81;
 }
 
 input.url {
@@ -41,6 +53,14 @@ input.url {
   padding: 5px;
   margin-bottom: 10px;
   font-size: 15px;
+  border-radius: 3px;
+  border-color: rgb(217, 217, 217);
+  border-style: solid;
+}
+
+input.url:focus {
+  outline: none;
+  border: solid 2px #562b81;
 }
 
 textarea {
@@ -49,6 +69,14 @@ textarea {
   padding: 5px;
   margin-bottom: 10px;
   font-size: 15px;
+  border-radius: 3px;
+  border-color: rgb(217, 217, 217);
+  border-style: solid;
+}
+
+textarea:focus {
+  outline: none;
+  border: solid 2px #562b81;
 }
 
 input.save {
