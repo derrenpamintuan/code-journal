@@ -8,3 +8,10 @@ function setSRC(event) {
     $image.setAttribute('src', 'images/placeholder-image-square.jpg');
   }
 }
+
+const $save = document.querySelector('.save');
+$save.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+}
