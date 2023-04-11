@@ -35,32 +35,34 @@
           <h2>New Entry</h2>
         </div>
       </div>
-      <div class="row">
-        <div class="column-half">
-          <img src="images/placeholder-image-square.jpg"/>
+      <form action="">
+        <div class="row">
+          <div class="column-half">
+            <img src="images/placeholder-image-square.jpg"/>
+          </div>
+          <div class="column-half">
+            <h4>Title</h4>
+            <input type="text" class="title" name="title" required/>
+            <h4>Photo URL</h4>
+            <input type="url" class="url" name="photo url" required/>
+          </div>
         </div>
-        <div class="column-half">
-          <h4>Title</h4>
-          <input type="text" class="title" name="title" required/>
-          <h4>Photo URL</h4>
-          <input type="url" class="url" name="photo url" required/>
+        <div class="row">
+          <div class="column-full">
+            <h4>Notes</h4>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column-full">
-          <h4>Notes</h4>
+        <div class="row">
+          <div class="column-full">
+            <textarea class="notes" rows="10"></textarea>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column-full">
-          <textarea class="notes" rows="10" required></textarea>
+        <div class="row">
+          <div class="column-full">
+            <input type="submit" class="save" value="SAVE"/>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="column-full">
-          <input type="submit" class="save" value="SAVE"/>
-        </div>
-      </div>
+      </form>
     </div>
     <div data-view="entries" class="hidden"></div>
   </main>
