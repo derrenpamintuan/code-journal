@@ -28,7 +28,6 @@ function handleSubmit(event) {
   $form.reset();
 }
 
-// eslint-disable-next-line no-unused-vars
 function renderEntry(entry) {
 
   const $li = document.createElement('li');
@@ -61,3 +60,12 @@ function renderEntry(entry) {
 
   return $li;
 }
+
+document.addEventListener('DOMContentLoaded', function (event) {
+  const dataEntries = data.entries;
+  const $entryList = document.querySelector('ul');
+  for (let i = 0; i < dataEntries.length; i++) {
+    const entryObject = renderEntry(dataEntries[i]);
+    $entryList.append(entryObject);
+  }
+});
