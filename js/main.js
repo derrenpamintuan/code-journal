@@ -69,3 +69,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
     $entryList.append(entryObject);
   }
 });
+
+const $noEntries = document.querySelector('.no-entries');
+
+// eslint-disable-next-line no-unused-vars
+function toggleNoEntries(show) {
+  if (show === true) {
+    $noEntries.className = 'row no-entries';
+  } else if (show === false) {
+    $noEntries.className = 'hidden';
+  }
+}
