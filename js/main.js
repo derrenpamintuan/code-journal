@@ -80,3 +80,17 @@ function toggleNoEntries(show) {
     $noEntries.className = 'hidden';
   }
 }
+
+const $viewList = document.querySelectorAll('.view');
+
+// eslint-disable-next-line no-unused-vars
+function viewSwap(view) {
+  data.view = view;
+  for (let i = 0; i < $viewList.length; i++) {
+    if ($viewList[i].getAttribute('data-view') === view) {
+      $viewList[i].className = 'view';
+    } else {
+      $viewList[i].className = 'view hidden';
+    }
+  }
+}
