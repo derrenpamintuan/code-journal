@@ -27,3 +27,37 @@ function handleSubmit(event) {
   $image.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
 }
+
+// eslint-disable-next-line no-unused-vars
+function renderEntry(entry) {
+
+  const $li = document.createElement('li');
+  $li.setAttribute('class', 'list-entry-item');
+
+  const $row = document.createElement('div');
+  $row.setAttribute('class', 'row');
+
+  const $listImage = document.createElement('div');
+  $listImage.setAttribute('class', 'column-half list-image');
+
+  const $columnHalf = document.createElement('div');
+  $columnHalf.setAttribute('class', 'column-half');
+
+  const $image = document.createElement('img');
+  $image.setAttribute('src', entry.url);
+
+  const $entryTitle = document.createElement('h3');
+  $entryTitle.setAttribute('class', 'entry-title');
+  $entryTitle.textContent = entry.title;
+
+  const $entryText = document.createElement('p');
+  $entryText.setAttribute('class', 'entry-text');
+  $entryText.textContent = entry.notes;
+
+  $li.append($row);
+  $row.append($listImage, $columnHalf);
+  $listImage.append($image);
+  $columnHalf.append($entryTitle, $entryText);
+
+  return $li;
+}
