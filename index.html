@@ -17,21 +17,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <div class="container">
+    <div class="container" >
       <div class="row">
         <div class="column-full">
-          <p>Code Journal</p>
+          <h1>Code Journal <span class="entries-header">Entries</span></h1>
         </div>
       </div>
     </div>
   </header>
   <main class="container">
-    <div data-view="entry-form">
+    <div data-view="entry-form" class="hidden">
       <div class="row">
-        <div class="column-half">
+        <div class="column-full">
           <h2>New Entry</h2>
         </div>
       </div>
@@ -64,8 +67,58 @@
         </div>
       </form>
     </div>
-    <div data-view="entries" class="hidden">
-      <ul></ul>
+    <div data-view="entries">
+      <div class="row">
+        <div class="column-full">
+          <h2>Entries <input type="submit" class="new" value="NEW" /></h2>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <div class="row">
+            <div class="column-half">
+              <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" />
+            </div>
+            <div class="column-half">
+              <h3 class="entry-title">Charizard</h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Sint, incidunt architecto? Iste consectetur neque architecto
+                fuga aut doloremque veniam sint dignissimos ipsum eveniet qui
+                illo nisi, praesentium at officiis cum.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+                atque, ad excepturi ratione mollitia non dignissimos porro
+                aliquam. Eligendi quae nulla non quidem placeat debitis nemo
+                sunt, mollitia suscipit. Explicabo?
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="column-half">
+              <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" />
+            </div>
+            <div class="column-half">
+              <h3 class="entry-title">Pikachu</h3>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint,
+                incidunt architecto? Iste consectetur neque architecto fuga aut
+                doloremque veniam sint dignissimos ipsum eveniet qui illo nisi,
+                praesentium at officiis cum.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+                atque, ad excepturi ratione mollitia non dignissimos porro
+                aliquam. Eligendi quae nulla non quidem placeat debitis nemo
+                sunt, mollitia suscipit. Explicabo?
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   </main>
   <script src="js/data.js"></script>

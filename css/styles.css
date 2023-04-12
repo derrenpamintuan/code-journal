@@ -2,6 +2,10 @@
   font-family: "Proza Libre", sans-serif;
 }
 
+p {
+  font-family: "Open Sans", sans-serif;
+}
+
 body {
   background-color: rgb(247, 247, 247);
 }
@@ -11,8 +15,16 @@ header {
   height: 53px;
 }
 
-.column-full > p {
+.column-full > h1 {
   color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.entries-header {
+  padding-left: 12px;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
 }
 
 img {
@@ -23,6 +35,10 @@ img {
 
 h2 {
   margin: 13px 0;
+}
+
+.entry-title {
+  margin: 5px 0;
 }
 
 h4 {
@@ -90,6 +106,27 @@ input.save {
   border: none;
   border-radius: 3px;
   cursor: pointer;
+}
+
+input.new {
+  float: right;
+  color: white;
+  background-color: #562b81;
+  padding: 5px 12px;
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li img {
+  padding: 10px 0;
 }
 
 @media screen and (min-width: 768px) {
