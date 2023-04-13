@@ -26,6 +26,17 @@ function handleSubmit(event) {
   data.entries.unshift(entry);
   $image.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
+
+  const $entryObject = document.querySelector('li');
+  const render = renderEntry(entry);
+  const $entryList = document.querySelector('ul');
+
+  $entryList.insertBefore(render, $entryObject);
+  viewSwap('entries');
+
+  if (event) {
+    toggleNoEntries(false);
+  }
 }
 
 function renderEntry(entry) {
@@ -72,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 const $noEntries = document.querySelector('.no-entries');
 
-// eslint-disable-next-line no-unused-vars
 function toggleNoEntries(show) {
   if (show === true) {
     $noEntries.className = 'row no-entries';
@@ -84,7 +94,6 @@ function toggleNoEntries(show) {
 const $entryForm = document.getElementById('entry-form');
 const $entries = document.getElementById('entries');
 
-// eslint-disable-next-line no-unused-vars
 function viewSwap(view) {
   data.view = view;
   if (view === 'entries') {
