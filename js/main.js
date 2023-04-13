@@ -75,9 +75,17 @@ function renderEntry(entry) {
 document.addEventListener('DOMContentLoaded', function (event) {
   const dataEntries = data.entries;
   const $entryList = document.querySelector('ul');
+
   for (let i = 0; i < dataEntries.length; i++) {
     const entryObject = renderEntry(dataEntries[i]);
     $entryList.append(entryObject);
+  }
+
+  viewSwap(data.view);
+  if (data.entries.length === 0) {
+    toggleNoEntries(true);
+  } else {
+    toggleNoEntries(false);
   }
 });
 
