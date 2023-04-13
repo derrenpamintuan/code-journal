@@ -101,3 +101,9 @@ const $entryHeader = document.querySelector('.entries-header');
 $entryHeader.addEventListener('click', function () {
   viewSwap('entries');
 });
+
+const $newButton = document.querySelector('.new');
+
+$newButton.addEventListener('click', function () {
+  viewSwap('entry-form');
+});

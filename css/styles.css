@@ -116,8 +116,7 @@ input.save {
   cursor: pointer;
 }
 
-input.new {
-  float: right;
+.new {
   color: white;
   background-color: #562b81;
   padding: 5px 12px;
@@ -140,6 +139,12 @@ li img {
 .no-entries {
   text-align: center;
   margin-top: 30px;
+}
+
+.entries-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media screen and (min-width: 768px) {
