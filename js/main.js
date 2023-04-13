@@ -81,16 +81,23 @@ function toggleNoEntries(show) {
   }
 }
 
-const $viewList = document.querySelectorAll('.view');
+const $entryForm = document.getElementById('entry-form');
+const $entries = document.getElementById('entries');
 
 // eslint-disable-next-line no-unused-vars
 function viewSwap(view) {
   data.view = view;
-  for (let i = 0; i < $viewList.length; i++) {
-    if ($viewList[i].getAttribute('data-view') === view) {
-      $viewList[i].className = 'view';
-    } else {
-      $viewList[i].className = 'view hidden';
-    }
+  if (view === 'entries') {
+    $entries.className = 'view';
+    $entryForm.className = 'view hidden';
+  } else {
+    $entries.className = 'view hidden';
+    $entryForm.className = 'view';
   }
 }
+
+const $entryHeader = document.querySelector('.entries-header');
+
+$entryHeader.addEventListener('click', function () {
+  viewSwap('entries');
+});

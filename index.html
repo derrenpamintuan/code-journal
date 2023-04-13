@@ -25,14 +25,15 @@
   <header>
     <div class="container" >
       <div class="row">
-        <div class="column-full">
-          <h1>Code Journal <span class="entries-header">Entries</span></h1>
+        <div class="column-full header">
+          <h1>Code Journal</h1>
+          <a class="entries-header">Entries</a>
         </div>
       </div>
     </div>
   </header>
   <main class="container">
-    <div data-view="entry-form" class="view hidden">
+    <div data-view="entry-form" class="view hidden" id="entry-form">
       <div class="row">
         <div class="column-full">
           <h2>New Entry</h2>
@@ -67,7 +68,7 @@
         </div>
       </form>
     </div>
-    <div data-view="entries" class="view">
+    <div data-view="entries" class="view" id="entries">
       <div class="row">
         <div class="column-full">
           <h2>Entries <input type="submit" class="new" value="NEW" /></h2>

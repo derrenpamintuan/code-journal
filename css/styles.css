@@ -15,6 +15,11 @@ header {
   height: 53px;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+}
+
 .column-full > h1 {
   color: white;
   font-size: 20px;
@@ -22,9 +27,12 @@ header {
 }
 
 .entries-header {
-  padding-left: 12px;
+  padding-left: 15px;
+  padding-bottom: 3px;
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
+  color: white;
+  cursor: pointer;
 }
 
 img {
