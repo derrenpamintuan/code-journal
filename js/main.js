@@ -1,5 +1,6 @@
 const $photoURL = document.querySelector('.url');
 const $image = document.querySelector('img');
+const $entryList = document.querySelector('ul');
 $photoURL.addEventListener('input', setSRC);
 
 function setSRC(event) {
@@ -43,6 +44,7 @@ function renderEntry(entry) {
 
   const $li = document.createElement('li');
   $li.setAttribute('class', 'list-entry-item');
+  $li.setAttribute('data-entry-id', entry.entryId);
 
   const $row = document.createElement('div');
   $row.setAttribute('class', 'row');
@@ -60,21 +62,27 @@ function renderEntry(entry) {
   $entryTitle.setAttribute('class', 'entry-title');
   $entryTitle.textContent = entry.title;
 
+  const $entryPen = document.createElement('i');
+  $entryPen.setAttribute('class', 'fa-solid fa-pen');
+
   const $entryText = document.createElement('p');
   $entryText.setAttribute('class', 'entry-text');
   $entryText.textContent = entry.notes;
 
+  const $titleRow = document.createElement('div');
+  $titleRow.setAttribute('class', 'title-row');
+
   $li.append($row);
   $row.append($listImage, $columnHalf);
   $listImage.append($image);
-  $columnHalf.append($entryTitle, $entryText);
+  $columnHalf.append($titleRow, $entryText);
+  $titleRow.append($entryTitle, $entryPen);
 
   return $li;
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {
   const dataEntries = data.entries;
-  const $entryList = document.querySelector('ul');
 
   for (let i = 0; i < dataEntries.length; i++) {
     const entryObject = renderEntry(dataEntries[i]);

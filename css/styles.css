@@ -147,6 +147,16 @@ li img {
   align-items: center;
 }
 
+.title-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-solid {
+  font-size: 20px;
+  margin-top: 5px;
+}
+
 @media screen and (min-width: 768px) {
   .column-half > h4 {
     margin-top: 0;
