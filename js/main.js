@@ -132,3 +132,26 @@ const $newButton = document.querySelector('.new');
 $newButton.addEventListener('click', function () {
   viewSwap('entry-form');
 });
+
+$entryList.addEventListener('click', function (event) {
+  if (event.target.tagName === 'I') {
+    viewSwap('entry-form');
+    for (let i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === Number(event.target.closest('li').getAttribute('data-entry-id'))) {
+        data.editing = data.entries[i];
+
+        const $editTitleHeader = document.querySelector('.switch-title');
+        const $editImage = document.querySelector('.switch-image');
+        const $editTitle = document.querySelector('.title');
+        const $editUrl = document.querySelector('.url');
+        const $editNotes = document.querySelector('.notes');
+
+        $editImage.setAttribute('src', data.editing.url);
+        $editTitle.setAttribute('value', data.editing.title);
+        $editUrl.setAttribute('value', data.editing.url);
+        $editNotes.textContent = data.editing.notes;
+        $editTitleHeader.textContent = 'Edit Entry';
+      }
+    }
+  }
+});
