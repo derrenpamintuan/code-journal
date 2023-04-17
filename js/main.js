@@ -1,6 +1,7 @@
 const $photoURL = document.querySelector('.url');
 const $image = document.querySelector('img');
 const $entryList = document.querySelector('ul');
+const $editTitleHeader = document.querySelector('.switch-title');
 $photoURL.addEventListener('input', setSRC);
 
 function setSRC(event) {
@@ -23,16 +24,41 @@ function handleSubmit(event) {
     notes: $form.elements.notes.value
   };
 
-  data.nextEntryId++;
-  data.entries.unshift(entry);
-  $image.setAttribute('src', 'images/placeholder-image-square.jpg');
-  $form.reset();
-
   const $entryObject = document.querySelector('li');
   const render = renderEntry(entry);
   const $entryList = document.querySelector('ul');
 
-  $entryList.insertBefore(render, $entryObject);
+  if (data.editing === null) {
+    data.nextEntryId++;
+    data.entries.unshift(entry);
+    $image.setAttribute('src', 'images/placeholder-image-square.jpg');
+
+    $entryList.insertBefore(render, $entryObject);
+  } else if (data.editing !== null) {
+    const newObj = {};
+    newObj.entryId = data.editing.entryId;
+    newObj.title = $form.elements.title.value;
+    newObj.url = $form.elements.photoURL.value;
+    newObj.notes = $form.elements.notes.value;
+    for (let i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === newObj.entryId) {
+        const index = data.entries.indexOf(data.editing);
+        data.entries.splice(index, 1, newObj);
+        const $liTags = document.querySelectorAll('[data-entry-id]');
+        for (let x = 0; x < $liTags.length; x++) {
+          if (Number($liTags[x].getAttribute('data-entry-id')) === newObj.entryId) {
+            $liTags[x].replaceWith(renderEntry(newObj));
+            $editTitleHeader.textContent = 'New Entry';
+            data.editing = null;
+            $image.setAttribute('src', 'images/placeholder-image-square.jpg');
+          }
+        }
+      }
+    }
+  }
+
+  $form.reset();
+
   viewSwap('entries');
 
   if (event) {
@@ -125,6 +151,10 @@ const $entryHeader = document.querySelector('.entries-header');
 
 $entryHeader.addEventListener('click', function () {
   viewSwap('entries');
+  data.editing = null;
+  $form.reset();
+  $image.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $editTitleHeader.textContent = 'New Entry';
 });
 
 const $newButton = document.querySelector('.new');
@@ -140,16 +170,15 @@ $entryList.addEventListener('click', function (event) {
       if (data.entries[i].entryId === Number(event.target.closest('li').getAttribute('data-entry-id'))) {
         data.editing = data.entries[i];
 
-        const $editTitleHeader = document.querySelector('.switch-title');
         const $editImage = document.querySelector('.switch-image');
         const $editTitle = document.querySelector('.title');
         const $editUrl = document.querySelector('.url');
         const $editNotes = document.querySelector('.notes');
 
         $editImage.setAttribute('src', data.editing.url);
-        $editTitle.setAttribute('value', data.editing.title);
-        $editUrl.setAttribute('value', data.editing.url);
-        $editNotes.textContent = data.editing.notes;
+        $editTitle.value = data.editing.title;
+        $editUrl.value = data.editing.url;
+        $editNotes.value = data.editing.notes;
         $editTitleHeader.textContent = 'Edit Entry';
       }
     }
