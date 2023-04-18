@@ -187,3 +187,10 @@ $entryList.addEventListener('click', function (event) {
     }
   }
 });
+
+const $button = document.querySelector('.button');
+const $modal = document.querySelector('.overlay');
+
+$button.addEventListener('click', function (event) {
+  $modal.style.display = 'flex';
+});
