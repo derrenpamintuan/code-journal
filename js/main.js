@@ -2,6 +2,7 @@ const $photoURL = document.querySelector('.url');
 const $image = document.querySelector('img');
 const $entryList = document.querySelector('ul');
 const $editTitleHeader = document.querySelector('.switch-title');
+const $deleteButton = document.querySelector('.button');
 $photoURL.addEventListener('input', setSRC);
 
 function setSRC(event) {
@@ -160,11 +161,13 @@ $entryHeader.addEventListener('click', function () {
 const $newButton = document.querySelector('.new');
 
 $newButton.addEventListener('click', function () {
+  $deleteButton.setAttribute('class', 'button hidden');
   viewSwap('entry-form');
 });
 
 $entryList.addEventListener('click', function (event) {
   if (event.target.tagName === 'I') {
+    $deleteButton.setAttribute('class', 'button');
     viewSwap('entry-form');
     for (let i = 0; i < data.entries.length; i++) {
       if (data.entries[i].entryId === Number(event.target.closest('li').getAttribute('data-entry-id'))) {

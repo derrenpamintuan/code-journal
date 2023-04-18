@@ -159,6 +159,21 @@ li img {
   cursor: pointer;
 }
 
+.button {
+  border: none;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  background-color: rgb(247, 247, 247);
+  color: rgb(255, 103, 103);
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 12px;
+}
+
+.button:hover {
+  color: red;
+}
+
 @media screen and (min-width: 768px) {
   .column-half > h4 {
     margin-top: 0;
