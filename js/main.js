@@ -196,9 +196,32 @@ $button.addEventListener('click', function (event) {
 });
 
 const $cancel = document.querySelector('.cancel');
-// eslint-disable-next-line no-unused-vars
 const $confirm = document.querySelector('.confirm');
 
 $cancel.addEventListener('click', function (event) {
   $modal.style.display = 'none';
+});
+
+$confirm.addEventListener('click', function (event) {
+  for (let i = 0; i < data.entries.length; i++) {
+    if (data.entries[i] === data.editing) {
+      const index = data.entries.indexOf(data.editing);
+      data.entries.splice(index, 1);
+      const $liTags = document.querySelectorAll('[data-entry-id]');
+      for (let x = 0; x < $liTags.length; x++) {
+        if (Number($liTags[x].getAttribute('data-entry-id')) === data.editing.entryId) {
+          $liTags[x].remove();
+          if ($entryList.childNodes.length === 0) {
+            toggleNoEntries(true);
+          }
+        }
+      }
+    }
+    $modal.style.display = 'none';
+    viewSwap('entries');
+    $editTitleHeader.textContent = 'New Entry';
+    data.editing = null;
+    $image.setAttribute('src', 'images/placeholder-image-square.jpg');
+    $form.reset();
+  }
 });
