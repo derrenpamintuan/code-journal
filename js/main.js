@@ -194,3 +194,11 @@ const $modal = document.querySelector('.overlay');
 $button.addEventListener('click', function (event) {
   $modal.style.display = 'flex';
 });
+
+const $cancel = document.querySelector('.cancel');
+// eslint-disable-next-line no-unused-vars
+const $confirm = document.querySelector('.confirm');
+
+$cancel.addEventListener('click', function (event) {
+  $modal.style.display = 'none';
+});
