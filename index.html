@@ -36,19 +36,19 @@
     <div data-view="entry-form" class="view hidden" id="entry-form">
       <div class="row">
         <div class="column-full">
-          <h2>New Entry</h2>
+          <h2 class="switch-title">New Entry</h2>
         </div>
       </div>
-      <form action="">
+      <form action="get" id="form1">
         <div class="row">
           <div class="column-half">
-            <img src="images/placeholder-image-square.jpg"/>
+            <img class="switch-image" src="images/placeholder-image-square.jpg"/>
           </div>
           <div class="column-half">
             <h4>Title</h4>
-            <input type="text" class="title" name="title" required/>
+            <input type="text" class="title" name="title" value="" required/>
             <h4>Photo URL</h4>
-            <input type="url" class="url" name="photoURL" required/>
+            <input type="url" class="url" name="photoURL" value="" required/>
           </div>
         </div>
         <div class="row">
